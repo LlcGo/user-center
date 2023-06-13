@@ -2,6 +2,8 @@ package com.lc.usercenter.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.lc.usercenter.exception.BusinessException;
+import com.lc.usercenter.common.ErrorCode;
 import com.lc.usercenter.model.domain.User;
 import com.lc.usercenter.service.UserService;
 import com.lc.usercenter.mapper.UserMapper;
@@ -32,27 +34,27 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
     @Override
     public long register(String userAccount, String userPassword, String confirmPassword,String plantCode) {
         if(StringUtils.isAnyBlank(userAccount,userPassword,confirmPassword,plantCode)){
-            return -1;
+            throw new BusinessException(ErrorCode.PARAMS_ERROR,"输入的数据少了");
         }
         if(userAccount.length() < 4){
-            return -1;
+            throw new BusinessException(ErrorCode.PARAMS_ERROR,"账户少于4位");
         }
         if(userPassword.length() < 8){
-            return -1;
+            throw new BusinessException(ErrorCode.PARAMS_ERROR,"密码长度短语8位");
         }
         if(plantCode.length() > 5){
-            return -1;
+            throw new BusinessException(ErrorCode.PARAMS_ERROR,"用户编码大于5位");
         }
 
         //判断账户是否含有特殊字符
         String regEx = "[`~!@#$%^&*()+=|{}':;',\\[\\].<>/?~！@#￥%……&*（）——+|{}【】‘；：”“’。，、？]";
         Matcher matcher = Pattern.compile(regEx).matcher(userAccount);
         if(matcher.find()){
-            return -1;
+            throw new BusinessException(ErrorCode.PARAMS_ERROR,"输入了特殊字符");
         }
 
         if(!userPassword.equals(confirmPassword)){
-            return -1;
+            throw new BusinessException(ErrorCode.PARAMS_ERROR,"俩次密码不同");
         }
 
         //查询数据库中是否有重复账户
@@ -60,13 +62,15 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         queryWrapper.eq(User::getUserAccount,userAccount);
         Long count = this.baseMapper.selectCount(queryWrapper);
         if(count > 0){
-            return -1;
+            throw new BusinessException(ErrorCode.PARAMS_ERROR,"账户重复");
         }
+
+        //用户编码重复
         queryWrapper = new LambdaQueryWrapper<>();
-        queryWrapper.eq(User::getPlantCode,userAccount);
+        queryWrapper.eq(User::getPlantCode,plantCode);
         count = this.baseMapper.selectCount(queryWrapper);
         if(count > 0){
-            return -1;
+            throw new BusinessException(ErrorCode.PARAMS_ERROR,"用户编码重复");
         }
 
         //对密码进行加密存入数据库
@@ -76,9 +80,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         User user = new User();
         user.setUserAccount(userAccount);
         user.setUserPassword(encryptPassword);
+        user.setPlantCode(plantCode);
         boolean saveResult = this.save(user);
         if(!saveResult){
-            return -1;
+            throw new BusinessException(ErrorCode.PARAMS_ERROR,"存入数据库失败");
         }
         return user.getId();
     }
@@ -86,20 +91,20 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
     @Override
     public User userLogin(String userAccount, String userPassword, HttpServletRequest request) {
         if(StringUtils.isAnyBlank(userAccount,userPassword)){
-            return null;
+            throw new BusinessException(ErrorCode.PARAMS_ERROR,"少传入参数");
         }
         if(userAccount.length() < 4){
-            return null;
+            throw new BusinessException(ErrorCode.PARAMS_ERROR,"账户长度小于4");
         }
         if(userPassword.length() < 8){
-            return null;
+            throw new BusinessException(ErrorCode.PARAMS_ERROR,"密码少于8");
         }
 
         //判断账户是否含有特殊字符
         String regEx = "[`~!@#$%^&*()+=|{}':;',\\[\\].<>/?~！@#￥%……&*（）——+|{}【】‘；：”“’。，、？]";
         Matcher matcher = Pattern.compile(regEx).matcher(userAccount);
         if(matcher.find()) {
-            return null;
+            throw new BusinessException(ErrorCode.PARAMS_ERROR,"有特殊字符");
         }
 
 
@@ -111,7 +116,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         User user = this.getOne(queryWrapper);
         if(user == null){
             log.info("user login failed, userAccount cannot match userPassword");
-            return null;
+            throw new BusinessException(ErrorCode.PARAMS_ERROR,"用户不存在");
         }
 
         //用户脱敏
