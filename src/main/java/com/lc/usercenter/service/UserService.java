@@ -4,6 +4,7 @@ import com.lc.usercenter.model.domain.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  *
@@ -25,4 +26,11 @@ public interface UserService extends IService<User> {
     User getSafeUser(User user);
 
     int outLogin(HttpServletRequest req);
+
+    /**
+     * 根据标签查找用户
+     * @param listTageName
+     * @return
+     */
+    List<User> searchUserByTageName(List<String> listTageName);
 }

@@ -50,6 +50,11 @@ public class User implements Serializable {
     private String phone;
 
     /**
+     * 标签名
+     */
+    private String tags;
+
+    /**
      * 邮箱
      */
     private String email;

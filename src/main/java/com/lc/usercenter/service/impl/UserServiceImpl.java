@@ -1,7 +1,11 @@
 package com.lc.usercenter.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.lc.usercenter.exception.BusinessException;
 import com.lc.usercenter.common.ErrorCode;
 import com.lc.usercenter.model.domain.User;
@@ -12,9 +16,15 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 import static com.lc.usercenter.contact.UserContant.USER_LOGIN_STATE;
 
@@ -26,6 +36,8 @@ import static com.lc.usercenter.contact.UserContant.USER_LOGIN_STATE;
 public class UserServiceImpl extends ServiceImpl<UserMapper, User>
     implements UserService{
 
+    @Resource
+    private UserMapper userMapper;
     /**
      * 盐值，混淆密码
      */
@@ -145,6 +157,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         safeUser.setUserRole(user.getUserRole());
         safeUser.setUserStatus(user.getUserStatus());
         safeUser.setCreateTime(user.getCreateTime());
+        safeUser.setTags(user.getTags());
         return safeUser;
     }
 
@@ -152,6 +165,43 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
     public int outLogin(HttpServletRequest req) {
         req.getSession().removeAttribute(USER_LOGIN_STATE);
         return 1;
+    }
+
+    /**
+     * 根据标签名查询用户  (内存过滤)
+     * @param listTageName
+     * @return
+     */
+    @Override
+    public List<User> searchUserByTageName(List<String> listTageName){
+        if(CollectionUtils.isEmpty(listTageName)){
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+//        for (String tageName: listTageName) {
+//            queryWrapper.like("tags",tageName);
+//        }
+        List<User> userList = userMapper.selectList(null);
+        Gson gson = new Gson();
+        List<User> user = userList.stream().filter((user1 -> {
+            String tags = user1.getTags();
+            if (tags == null) {
+                return false;
+            }
+            Set<String> tagList = gson.fromJson(tags,
+                    new TypeToken<Set<String>>() {}.getType());
+            //判空
+            tagList = Optional.ofNullable(tagList).orElse(new HashSet<>());
+            for (String tag : tagList) {
+                if (!tagList.contains(tag)) {
+                    return false;
+                }
+            }
+            return true;
+        })).collect(Collectors.toList()).stream().map(this::getSafeUser).collect(Collectors.toList());
+        return user;
+//        List<User> users = userMapper.selectList(queryWrapper);
+//        return users.stream().map(this::getSafeUser).collect(Collectors.toList());
     }
 }
 

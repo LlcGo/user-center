@@ -9,6 +9,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.regex.Pattern;
 
 /**
@@ -42,6 +45,14 @@ public class UserServiceTets {
         userAccount = "lc666";
         register = userService.register(userAccount, userPassword, confPassword,plantCode);
         Assertions.assertEquals(-1,register);
+    }
+
+
+    @Test
+    public void searchUserByTageName() {
+        List<String> listTageName = Arrays.asList("java","python");
+        List<User> users = userService.searchUserByTageName(listTageName);
+        Assert.assertNotNull(users);
     }
 
 

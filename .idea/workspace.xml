@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e54cd569-ff59-4f3d-ac98-4e6f0a1183f4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/mybatisx/templates.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/luoluogo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sql/create_table.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lc/usercenter/mapper/TagMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lc/usercenter/model/domain/Tag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lc/usercenter/service/TagService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lc/usercenter/service/impl/TagServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/TagMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lc/usercenter/common/BaseRespons.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lc/usercenter/common/ErrorCode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lc/usercenter/common/ResponsUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lc/usercenter/exception/BusinessException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lc/usercenter/exception/GlobalExceptionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lc/usercenter/UserCenterApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lc/usercenter/LuoLuoGoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lc/usercenter/exception/BusinessException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lc/usercenter/exception/BusinessException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lc/usercenter/model/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lc/usercenter/model/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lc/usercenter/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lc/usercenter/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lc/usercenter/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lc/usercenter/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/lc/usercenter/service/UserServiceTets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/lc/usercenter/service/UserServiceTets.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/mybackground.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lc/usercenter/UserCenterApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lc/usercenter/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lc/usercenter/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lc/usercenter/model/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lc/usercenter/model/domain/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lc/usercenter/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lc/usercenter/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lc/usercenter/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lc/usercenter/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/lc/usercenter/service/UserServiceTets.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/lc/usercenter/service/UserServiceTets.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@192.168.190.100" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@192.168.190.100" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@192.168.190.100" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="lcbackstage: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@192.168.190.100" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="lcbackstage: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="tag: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@192.168.190.100" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="lcbackstage: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="user: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:/mevan/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\mevan\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2O6U2BRdPllAuSpKhDyNqmhhCHJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.lc.usercenter.service" />
+      <recent name="com.lc.usercenter" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\ideaJava\mybackground\src\main\resources\static" />
+      <recent name="E:\ideaJava\mybackground\src\main\resources\templates" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.UserServiceTets.searchUserByTageName">
+    <configuration name="All in mybackground" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybackground" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestSQL" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybackground" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lc.usercenter.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.lc.usercenter" />
+      <option name="MAIN_CLASS_NAME" value="com.lc.usercenter.TestSQL" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestSQL.TestInsert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybackground" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lc.usercenter.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.lc.usercenter" />
+      <option name="MAIN_CLASS_NAME" value="com.lc.usercenter.TestSQL" />
+      <option name="METHOD_NAME" value="TestInsert" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTets.register" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybackground" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lc.usercenter.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.lc.usercenter.service" />
+      <option name="MAIN_CLASS_NAME" value="com.lc.usercenter.service.UserServiceTets" />
+      <option name="METHOD_NAME" value="register" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTets.searchUserByTageName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="luoluogo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lc.usercenter.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.lc.usercenter.service" />
+      <option name="MAIN_CLASS_NAME" value="com.lc.usercenter.service.UserServiceTets" />
+      <option name="METHOD_NAME" value="searchUserByTageName" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LuoLuoGoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="luoluogo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.lc.usercenter.LuoLuoGoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserCenterApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="mybackground" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.lc.usercenter.UserCenterApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UserServiceTets.searchUserByTageName" />
+        <item itemvalue="JUnit.All in mybackground" />
+        <item itemvalue="JUnit.UserServiceTets.register" />
+        <item itemvalue="JUnit.TestSQL.TestInsert" />
+        <item itemvalue="JUnit.TestSQL" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e54cd569-ff59-4f3d-ac98-4e6f0a1183f4" name="Default Changelist" comment="" />
+      <created>1680880315449</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1680880315449</updated>
+      <workItem from="1680880321570" duration="137000" />
+      <workItem from="1680880472764" duration="3718000" />
+      <workItem from="1680914507138" duration="907000" />
+      <workItem from="1680968482149" duration="1609000" />
+      <workItem from="1680970260683" duration="156000" />
+      <workItem from="1680970427096" duration="74000" />
+      <workItem from="1681014319716" duration="9000" />
+      <workItem from="1681051791540" duration="1211000" />
+      <workItem from="1681053043487" duration="1701000" />
+      <workItem from="1681103495896" duration="5000" />
+      <workItem from="1681134113370" duration="7337000" />
+      <workItem from="1681189324093" duration="51000" />
+      <workItem from="1681216981447" duration="7329000" />
+      <workItem from="1681265371606" duration="12000" />
+      <workItem from="1682127897804" duration="241000" />
+      <workItem from="1682148102001" duration="152000" />
+      <workItem from="1682151180127" duration="617000" />
+      <workItem from="1684552866421" duration="513000" />
+      <workItem from="1684554100558" duration="2067000" />
+      <workItem from="1685886167062" duration="6734000" />
+      <workItem from="1685945000011" duration="19000" />
+      <workItem from="1685972694055" duration="5930000" />
+      <workItem from="1686025106692" duration="29000" />
+      <workItem from="1686059969026" duration="5203000" />
+      <workItem from="1686118871028" duration="13000" />
+      <workItem from="1686149728683" duration="3050000" />
+      <workItem from="1686190561187" duration="35000" />
+      <workItem from="1686230735773" duration="3049000" />
+      <workItem from="1686293922973" duration="636000" />
+      <workItem from="1686323966684" duration="3317000" />
+      <workItem from="1686357602005" duration="25000" />
+      <workItem from="1686412279216" duration="2539000" />
+      <workItem from="1686467140740" duration="750000" />
+      <workItem from="1686488103465" duration="10691000" />
+      <workItem from="1686561153236" duration="18000" />
+      <workItem from="1686578854316" duration="4795000" />
+      <workItem from="1686631893569" duration="136000" />
+      <workItem from="1686646628362" duration="126000" />
+      <workItem from="1686646765771" duration="185000" />
+      <workItem from="1686646962762" duration="47000" />
+      <workItem from="1686653842817" duration="68000" />
+      <workItem from="1686659151583" duration="9000" />
+      <workItem from="1686660898667" duration="734000" />
+      <workItem from="1686667370830" duration="1411000" />
+      <workItem from="1686720947895" duration="93000" />
+      <workItem from="1686837641118" duration="1721000" />
+      <workItem from="1686839996081" duration="2898000" />
+      <workItem from="1686874629523" duration="127000" />
+      <workItem from="1686874770804" duration="142000" />
+      <workItem from="1686922601123" duration="3095000" />
+      <workItem from="1686928067475" duration="1196000" />
+      <workItem from="1686981367939" duration="52000" />
+      <workItem from="1686997149477" duration="2462000" />
+    </task>
+    <task id="LOCAL-00001" summary="6/11 mybackground">
+      <created>1686490509224</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1686490509224</updated>
+    </task>
+    <task id="LOCAL-00002" summary="6/13  全局异常处理优化">
+      <created>1686646658736</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1686646658736</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="6/11 mybackground" />
+    <MESSAGE value="6/13  全局异常处理优化" />
+    <option name="LAST_COMMIT_MESSAGE" value="6/13  全局异常处理优化" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="218" y="16" width="1218" height="836" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1686923028526">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="218" y="16" width="1218" height="836" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.852@0.0.1600.852" timestamp="1686923028526" />
+    <state x="931" y="90" key="#com.intellij.ide.util.MemberChooser" timestamp="1686497425318">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="931" y="90" key="#com.intellij.ide.util.MemberChooser/0.0.1600.852@0.0.1600.852" timestamp="1686497425318" />
+    <state x="389" y="332" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1680970477224">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="389" y="332" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1600.852@0.0.1600.852" timestamp="1680970477224" />
+    <state x="530" y="243" width="539" height="377" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1686841762252">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="530" y="243" width="539" height="377" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1600.852@0.0.1600.852" timestamp="1686841762252" />
+    <state x="530" y="269" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1680970478503">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="530" y="269" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1600.852@0.0.1600.852" timestamp="1680970478503" />
+    <state x="394" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1686841686907">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="394" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1600.852@0.0.1600.852" timestamp="1686841686907" />
+    <state x="656" y="0" key="#xdebugger.evaluate" timestamp="1681139139392">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="656" y="0" key="#xdebugger.evaluate/0.0.1600.852@0.0.1600.852" timestamp="1681139139392" />
+    <state x="303" y="0" key="CommitChangelistDialog2" timestamp="1686646656686">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="303" y="0" key="CommitChangelistDialog2/0.0.1600.852@0.0.1600.852" timestamp="1686646656686" />
+    <state width="542" height="761" key="DebuggerActiveHint" timestamp="1686926835347">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state width="542" height="761" key="DebuggerActiveHint/0.0.1600.852@0.0.1600.852" timestamp="1686926835347" />
+    <state x="469" y="104" key="FileChooserDialogImpl" timestamp="1686997195847">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="469" y="104" key="FileChooserDialogImpl/0.0.1600.852@0.0.1600.852" timestamp="1686997195847" />
+    <state x="607" y="299" key="Gitee.ShareDialog" timestamp="1686490553564">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="607" y="299" key="Gitee.ShareDialog/0.0.1600.852@0.0.1600.852" timestamp="1686490553564" />
+    <state x="577" y="293" width="476" height="265" key="Github.CreateGistDialog" timestamp="1686490521569">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="577" y="293" width="476" height="265" key="Github.CreateGistDialog/0.0.1600.852@0.0.1600.852" timestamp="1686490521569" />
+    <state x="631" y="286" width="339" height="279" key="Github.ShareDialog" timestamp="1686490579781">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="631" y="286" width="339" height="279" key="Github.ShareDialog/0.0.1600.852@0.0.1600.852" timestamp="1686490579781" />
+    <state width="1547" height="466" key="GridCell.Tab.0.bottom" timestamp="1687006704148">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state width="1547" height="466" key="GridCell.Tab.0.bottom/0.0.1600.852@0.0.1600.852" timestamp="1687006704148" />
+    <state width="1547" height="466" key="GridCell.Tab.0.center" timestamp="1687006704148">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state width="1547" height="466" key="GridCell.Tab.0.center/0.0.1600.852@0.0.1600.852" timestamp="1687006704148" />
+    <state width="1547" height="466" key="GridCell.Tab.0.left" timestamp="1687006704148">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state width="1547" height="466" key="GridCell.Tab.0.left/0.0.1600.852@0.0.1600.852" timestamp="1687006704148" />
+    <state width="1547" height="466" key="GridCell.Tab.0.right" timestamp="1687006704148">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state width="1547" height="466" key="GridCell.Tab.0.right/0.0.1600.852@0.0.1600.852" timestamp="1687006704148" />
+    <state width="1547" height="58" key="GridCell.Tab.1.bottom" timestamp="1686927327722">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state width="1547" height="58" key="GridCell.Tab.1.bottom/0.0.1600.852@0.0.1600.852" timestamp="1686927327722" />
+    <state width="1547" height="58" key="GridCell.Tab.1.center" timestamp="1686927327722">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state width="1547" height="58" key="GridCell.Tab.1.center/0.0.1600.852@0.0.1600.852" timestamp="1686927327722" />
+    <state width="1547" height="58" key="GridCell.Tab.1.left" timestamp="1686927327722">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state width="1547" height="58" key="GridCell.Tab.1.left/0.0.1600.852@0.0.1600.852" timestamp="1686927327722" />
+    <state width="1547" height="58" key="GridCell.Tab.1.right" timestamp="1686927327722">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state width="1547" height="58" key="GridCell.Tab.1.right/0.0.1600.852@0.0.1600.852" timestamp="1686927327722" />
+    <state width="1547" height="21" key="GridCell.Tab.2.bottom" timestamp="1686664425193">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state width="1547" height="21" key="GridCell.Tab.2.bottom/0.0.1600.852@0.0.1600.852" timestamp="1686664425193" />
+    <state width="1547" height="21" key="GridCell.Tab.2.center" timestamp="1686664425193">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state width="1547" height="21" key="GridCell.Tab.2.center/0.0.1600.852@0.0.1600.852" timestamp="1686664425193" />
+    <state width="1547" height="21" key="GridCell.Tab.2.left" timestamp="1686664425193">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state width="1547" height="21" key="GridCell.Tab.2.left/0.0.1600.852@0.0.1600.852" timestamp="1686664425193" />
+    <state width="1547" height="21" key="GridCell.Tab.2.right" timestamp="1686664425193">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state width="1547" height="21" key="GridCell.Tab.2.right/0.0.1600.852@0.0.1600.852" timestamp="1686664425193" />
+    <state x="173" y="0" key="SettingsEditor" timestamp="1686874723329">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="173" y="0" key="SettingsEditor/0.0.1600.852@0.0.1600.852" timestamp="1686874723329" />
+    <state x="292" y="83" key="Vcs.Push.Dialog.v2" timestamp="1686720966940">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="292" y="83" key="Vcs.Push.Dialog.v2/0.0.1600.852@0.0.1600.852" timestamp="1686720966940" />
+    <state x="841" y="408" width="416" height="332" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1680969289643">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="841" y="408" width="416" height="332" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1600.852@0.0.1600.852" timestamp="1680969289643" />
+    <state x="536" y="0" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1686923400352">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="536" y="0" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1600.852@0.0.1600.852" timestamp="1686923400352" />
+    <state x="465" y="0" key="com.intellij.database.view.ui.DbObjectDialog" timestamp="1685886524518">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="465" y="0" key="com.intellij.database.view.ui.DbObjectDialog/0.0.1600.852@0.0.1600.852" timestamp="1685886524518" />
+    <state x="467" y="110" key="extract.method.dialog" timestamp="1685893479539">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="467" y="110" key="extract.method.dialog/0.0.1600.852@0.0.1600.852" timestamp="1685893479539" />
+    <state x="307" y="29" width="986" height="794" key="find.popup" timestamp="1686840308262">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="307" y="29" width="986" height="794" key="find.popup/0.0.1600.852@0.0.1600.852" timestamp="1686840308262" />
+    <state x="2" y="0" key="new project wizard" timestamp="1686874911113">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="2" y="0" key="new project wizard/0.0.1600.852@0.0.1600.852" timestamp="1686874911113" />
+    <state x="482" y="0" key="refactoring.ChangeSignatureDialog" timestamp="1686843272958">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="482" y="0" key="refactoring.ChangeSignatureDialog/0.0.1600.852@0.0.1600.852" timestamp="1686843272958" />
+    <state x="293" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1681135559246">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="293" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1600.852@0.0.1600.852" timestamp="1681135559246" />
+  </component>
+</project>

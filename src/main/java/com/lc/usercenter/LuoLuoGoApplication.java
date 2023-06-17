@@ -6,10 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @MapperScan("com.lc.usercenter.mapper")
-public class UserCenterApplication {
+public class LuoLuoGoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(UserCenterApplication.class, args);
+        SpringApplication.run(LuoLuoGoApplication.class, args);
     }
 
 }
