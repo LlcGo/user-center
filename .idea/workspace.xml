@@ -2,40 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e54cd569-ff59-4f3d-ac98-4e6f0a1183f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/mybatisx/templates.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/luoluogo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sql/create_table.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lc/usercenter/mapper/TagMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lc/usercenter/model/domain/Tag.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lc/usercenter/service/TagService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lc/usercenter/service/impl/TagServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/TagMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/lc/usercenter/common/BaseRespons.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/lc/usercenter/common/ErrorCode.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/lc/usercenter/common/ResponsUtil.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/lc/usercenter/exception/BusinessException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/lc/usercenter/exception/GlobalExceptionHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lc/usercenter/config/Knife4jConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lc/usercenter/once/DemoDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lc/usercenter/once/DemoData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lc/usercenter/once/DemoDataListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lc/usercenter/once/importExcel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/luoluogo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/luoluogo.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lc/usercenter/UserCenterApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lc/usercenter/LuoLuoGoApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lc/usercenter/exception/BusinessException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lc/usercenter/exception/BusinessException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lc/usercenter/model/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lc/usercenter/model/domain/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lc/usercenter/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lc/usercenter/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lc/usercenter/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lc/usercenter/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/lc/usercenter/service/UserServiceTets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/lc/usercenter/service/UserServiceTets.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/mybackground.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lc/usercenter/UserCenterApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lc/usercenter/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lc/usercenter/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lc/usercenter/model/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lc/usercenter/model/domain/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lc/usercenter/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lc/usercenter/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lc/usercenter/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lc/usercenter/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/lc/usercenter/service/UserServiceTets.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/lc/usercenter/service/UserServiceTets.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +125,7 @@
       <recent name="E:\ideaJava\mybackground\src\main\resources\templates" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserServiceTets.searchUserByTageName">
+  <component name="RunManager" selected="Spring Boot.LuoLuoGoApplication">
     <configuration name="All in mybackground" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mybackground" />
       <option name="PACKAGE_NAME" value="" />
@@ -320,6 +296,10 @@
       <workItem from="1686928067475" duration="1196000" />
       <workItem from="1686981367939" duration="52000" />
       <workItem from="1686997149477" duration="2462000" />
+      <workItem from="1687068037133" duration="444000" />
+      <workItem from="1687095862895" duration="1794000" />
+      <workItem from="1687163535958" duration="57000" />
+      <workItem from="1687270314787" duration="3821000" />
     </task>
     <task id="LOCAL-00001" summary="6/11 mybackground">
       <created>1686490509224</created>
@@ -383,10 +363,10 @@
       <screen x="0" y="0" width="1600" height="852" />
     </state>
     <state width="542" height="761" key="DebuggerActiveHint/0.0.1600.852@0.0.1600.852" timestamp="1686926835347" />
-    <state x="469" y="104" key="FileChooserDialogImpl" timestamp="1686997195847">
+    <state x="469" y="104" key="FileChooserDialogImpl" timestamp="1687163591736">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
-    <state x="469" y="104" key="FileChooserDialogImpl/0.0.1600.852@0.0.1600.852" timestamp="1686997195847" />
+    <state x="469" y="104" key="FileChooserDialogImpl/0.0.1600.852@0.0.1600.852" timestamp="1687163591736" />
     <state x="607" y="299" key="Gitee.ShareDialog" timestamp="1686490553564">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
@@ -399,54 +379,54 @@
       <screen x="0" y="0" width="1600" height="852" />
     </state>
     <state x="631" y="286" width="339" height="279" key="Github.ShareDialog/0.0.1600.852@0.0.1600.852" timestamp="1686490579781" />
-    <state width="1547" height="466" key="GridCell.Tab.0.bottom" timestamp="1687006704148">
+    <state width="1547" height="456" key="GridCell.Tab.0.bottom" timestamp="1687278792686">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
-    <state width="1547" height="466" key="GridCell.Tab.0.bottom/0.0.1600.852@0.0.1600.852" timestamp="1687006704148" />
-    <state width="1547" height="466" key="GridCell.Tab.0.center" timestamp="1687006704148">
+    <state width="1547" height="456" key="GridCell.Tab.0.bottom/0.0.1600.852@0.0.1600.852" timestamp="1687278792686" />
+    <state width="1547" height="456" key="GridCell.Tab.0.center" timestamp="1687278792686">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
-    <state width="1547" height="466" key="GridCell.Tab.0.center/0.0.1600.852@0.0.1600.852" timestamp="1687006704148" />
-    <state width="1547" height="466" key="GridCell.Tab.0.left" timestamp="1687006704148">
+    <state width="1547" height="456" key="GridCell.Tab.0.center/0.0.1600.852@0.0.1600.852" timestamp="1687278792686" />
+    <state width="1547" height="456" key="GridCell.Tab.0.left" timestamp="1687278792686">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
-    <state width="1547" height="466" key="GridCell.Tab.0.left/0.0.1600.852@0.0.1600.852" timestamp="1687006704148" />
-    <state width="1547" height="466" key="GridCell.Tab.0.right" timestamp="1687006704148">
+    <state width="1547" height="456" key="GridCell.Tab.0.left/0.0.1600.852@0.0.1600.852" timestamp="1687278792686" />
+    <state width="1547" height="456" key="GridCell.Tab.0.right" timestamp="1687278792686">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
-    <state width="1547" height="466" key="GridCell.Tab.0.right/0.0.1600.852@0.0.1600.852" timestamp="1687006704148" />
-    <state width="1547" height="58" key="GridCell.Tab.1.bottom" timestamp="1686927327722">
+    <state width="1547" height="456" key="GridCell.Tab.0.right/0.0.1600.852@0.0.1600.852" timestamp="1687278792686" />
+    <state width="1547" height="456" key="GridCell.Tab.1.bottom" timestamp="1687278792686">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
-    <state width="1547" height="58" key="GridCell.Tab.1.bottom/0.0.1600.852@0.0.1600.852" timestamp="1686927327722" />
-    <state width="1547" height="58" key="GridCell.Tab.1.center" timestamp="1686927327722">
+    <state width="1547" height="456" key="GridCell.Tab.1.bottom/0.0.1600.852@0.0.1600.852" timestamp="1687278792686" />
+    <state width="1547" height="456" key="GridCell.Tab.1.center" timestamp="1687278792686">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
-    <state width="1547" height="58" key="GridCell.Tab.1.center/0.0.1600.852@0.0.1600.852" timestamp="1686927327722" />
-    <state width="1547" height="58" key="GridCell.Tab.1.left" timestamp="1686927327722">
+    <state width="1547" height="456" key="GridCell.Tab.1.center/0.0.1600.852@0.0.1600.852" timestamp="1687278792686" />
+    <state width="1547" height="456" key="GridCell.Tab.1.left" timestamp="1687278792686">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
-    <state width="1547" height="58" key="GridCell.Tab.1.left/0.0.1600.852@0.0.1600.852" timestamp="1686927327722" />
-    <state width="1547" height="58" key="GridCell.Tab.1.right" timestamp="1686927327722">
+    <state width="1547" height="456" key="GridCell.Tab.1.left/0.0.1600.852@0.0.1600.852" timestamp="1687278792686" />
+    <state width="1547" height="456" key="GridCell.Tab.1.right" timestamp="1687278792686">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
-    <state width="1547" height="58" key="GridCell.Tab.1.right/0.0.1600.852@0.0.1600.852" timestamp="1686927327722" />
-    <state width="1547" height="21" key="GridCell.Tab.2.bottom" timestamp="1686664425193">
+    <state width="1547" height="456" key="GridCell.Tab.1.right/0.0.1600.852@0.0.1600.852" timestamp="1687278792686" />
+    <state width="1547" height="456" key="GridCell.Tab.2.bottom" timestamp="1687278792686">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
-    <state width="1547" height="21" key="GridCell.Tab.2.bottom/0.0.1600.852@0.0.1600.852" timestamp="1686664425193" />
-    <state width="1547" height="21" key="GridCell.Tab.2.center" timestamp="1686664425193">
+    <state width="1547" height="456" key="GridCell.Tab.2.bottom/0.0.1600.852@0.0.1600.852" timestamp="1687278792686" />
+    <state width="1547" height="456" key="GridCell.Tab.2.center" timestamp="1687278792686">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
-    <state width="1547" height="21" key="GridCell.Tab.2.center/0.0.1600.852@0.0.1600.852" timestamp="1686664425193" />
-    <state width="1547" height="21" key="GridCell.Tab.2.left" timestamp="1686664425193">
+    <state width="1547" height="456" key="GridCell.Tab.2.center/0.0.1600.852@0.0.1600.852" timestamp="1687278792686" />
+    <state width="1547" height="456" key="GridCell.Tab.2.left" timestamp="1687278792686">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
-    <state width="1547" height="21" key="GridCell.Tab.2.left/0.0.1600.852@0.0.1600.852" timestamp="1686664425193" />
-    <state width="1547" height="21" key="GridCell.Tab.2.right" timestamp="1686664425193">
+    <state width="1547" height="456" key="GridCell.Tab.2.left/0.0.1600.852@0.0.1600.852" timestamp="1687278792686" />
+    <state width="1547" height="456" key="GridCell.Tab.2.right" timestamp="1687278792686">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
-    <state width="1547" height="21" key="GridCell.Tab.2.right/0.0.1600.852@0.0.1600.852" timestamp="1686664425193" />
+    <state width="1547" height="456" key="GridCell.Tab.2.right/0.0.1600.852@0.0.1600.852" timestamp="1687278792686" />
     <state x="173" y="0" key="SettingsEditor" timestamp="1686874723329">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
@@ -475,10 +455,10 @@
       <screen x="0" y="0" width="1600" height="852" />
     </state>
     <state x="307" y="29" width="986" height="794" key="find.popup/0.0.1600.852@0.0.1600.852" timestamp="1686840308262" />
-    <state x="2" y="0" key="new project wizard" timestamp="1686874911113">
+    <state x="2" y="0" width="1125" height="726" key="new project wizard" timestamp="1687068483571">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
-    <state x="2" y="0" key="new project wizard/0.0.1600.852@0.0.1600.852" timestamp="1686874911113" />
+    <state x="2" y="0" width="1125" height="726" key="new project wizard/0.0.1600.852@0.0.1600.852" timestamp="1687068483571" />
     <state x="482" y="0" key="refactoring.ChangeSignatureDialog" timestamp="1686843272958">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
