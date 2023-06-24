@@ -26,6 +26,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
+import static com.lc.usercenter.contact.UserContant.ADMIN_ROLE;
 import static com.lc.usercenter.contact.UserContant.USER_LOGIN_STATE;
 
 /**
@@ -135,7 +136,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         User safeUser = getSafeUser(user);
         //存入session
         request.getSession().setAttribute(USER_LOGIN_STATE,safeUser);
-
         return safeUser;
     }
 
@@ -154,6 +154,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         safeUser.setGender(user.getGender());
         safeUser.setPhone(user.getPhone());
         safeUser.setEmail(user.getEmail());
+        safeUser.setProfile(user.getProfile());
         safeUser.setUserRole(user.getUserRole());
         safeUser.setUserStatus(user.getUserStatus());
         safeUser.setCreateTime(user.getCreateTime());
@@ -183,16 +184,19 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
 //        }
         List<User> userList = userMapper.selectList(null);
         Gson gson = new Gson();
+        //查出来的所有用户
         List<User> user = userList.stream().filter((user1 -> {
+            //每一个user里面的标签
             String tags = user1.getTags();
             if (tags == null) {
                 return false;
             }
+            //把标签转换为set集合
             Set<String> tagList = gson.fromJson(tags,
                     new TypeToken<Set<String>>() {}.getType());
-            //判空
+            //查出来的标签的集合
             tagList = Optional.ofNullable(tagList).orElse(new HashSet<>());
-            for (String tag : tagList) {
+            for (String tag : listTageName) {
                 if (!tagList.contains(tag)) {
                     return false;
                 }
@@ -203,6 +207,50 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
 //        List<User> users = userMapper.selectList(queryWrapper);
 //        return users.stream().map(this::getSafeUser).collect(Collectors.toList());
     }
+
+    @Override
+    public int updateByUser(User user, User loginUser) {
+        //判断传入的用户是不是有id
+        long userId = user.getId();
+        if(userId <= 0){
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        //不是管理员,并且当前修改的用户id 不是 他自己的用户id
+        if(!isAdmin(loginUser) && userId != loginUser.getId()){
+            throw new BusinessException(ErrorCode.NOT_ROLE);
+        }
+        User oldUser = userMapper.selectById(userId);
+        //是否有这个用户
+        if(oldUser == null){
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        int result = userMapper.updateById(user);
+        if(result <= 0){
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        return result;
+    }
+
+    @Override
+    public boolean isAdmin(HttpServletRequest req) {
+            Object o = req.getSession().getAttribute(USER_LOGIN_STATE);
+            User user = (User)o;
+            return user != null && user.getUserRole() == ADMIN_ROLE;
+    }
+
+    @Override
+    public boolean isAdmin(User user) {
+        return user != null && user.getUserRole() == ADMIN_ROLE;
+    }
+
+    @Override
+    public User getLoginUser(HttpServletRequest req) {
+        if(req == null){
+            return null;
+        }
+        return (User)req.getSession().getAttribute(USER_LOGIN_STATE);
+    }
+
 }
 
 

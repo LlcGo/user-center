@@ -9,6 +9,8 @@ import com.lc.usercenter.model.domain.User;
 import com.lc.usercenter.model.requset.UserLoginRequest;
 import com.lc.usercenter.model.requset.UserRegisterRequest;
 import com.lc.usercenter.service.UserService;
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,6 +29,7 @@ import static com.lc.usercenter.contact.UserContant.USER_LOGIN_STATE;
  */
 @RestController
 @RequestMapping("/user")
+//@CrossOrigin(origins = {"http://127.0.0.1:5173"})
 public class UserController {
 
     @Resource
@@ -84,10 +87,21 @@ public class UserController {
         return ResponsUtil.success(safeUser);
     }
 
+    @PostMapping("/update")
+    public BaseRespons<Integer> updateByUser(@RequestBody User user,HttpServletRequest req){
+        if(user == null){
+            throw  new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        User loginUser = userService.getLoginUser(req);
+        if(loginUser == null){
+            throw new BusinessException(ErrorCode.NOT_ROLE);
+        }
+        return ResponsUtil.success(userService.updateByUser(user, loginUser));
+    }
 
     @GetMapping("/search")
     public BaseRespons<List<User>> searchUsers(String name, HttpServletRequest req){
-        if (!isAdmin(req)) {
+        if (!userService.isAdmin(req)) {
             throw new BusinessException(ErrorCode.NOT_ROLE,"您不是管理员");
         }
 
@@ -103,11 +117,21 @@ public class UserController {
         return ResponsUtil.success(result);
     }
 
-
+    @GetMapping("/searchUserByTags")
+    public BaseRespons<List<User>> searchUserByTags(@RequestParam(required = false) List<String> tagsName){
+         if(tagsName == null) {
+             throw new BusinessException(ErrorCode.PARAMS_ERROR);
+         }
+        List<User> users = userService.searchUserByTageName(tagsName);
+        if(ObjectUtils.isEmpty(users)){
+            throw new BusinessException(ErrorCode.PARAMS_ERROR,"查询的参数为null");
+        }
+        return ResponsUtil.success(users);
+    }
 
     @PostMapping("/delete")
     public BaseRespons<Boolean> deleteUser(@RequestBody Long id , HttpServletRequest req){
-        if(!isAdmin(req)){
+        if(!userService.isAdmin(req)){
             throw new BusinessException(ErrorCode.NOT_ROLE,"您不是管理员");
         };
         if(id < 0){
@@ -118,16 +142,7 @@ public class UserController {
     }
 
 
-    /**
-     * 是否为管理员 false 不是  true 是
-     * @param req
-     * @return
-     */
-    private boolean isAdmin(HttpServletRequest req) {
-        Object o = req.getSession().getAttribute(USER_LOGIN_STATE);
-        User user = (User)o;
-        return user != null && user.getUserRole() == ADMIN_ROLE;
-    }
+
 
 }
 

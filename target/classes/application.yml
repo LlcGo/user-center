@@ -9,10 +9,24 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
+  redis:
+    port: 6379
+    password: root
+    host: 192.168.190.100
+    database: 0
+  session:
+    timeout: 86400
+    store-type: redis
+
 server:
   port: 8080
   servlet:
     context-path: /api
+    session:
+      cookie:
+        domain: localhost
+#        same-site: none
+#        secure: true
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: false
