@@ -117,6 +117,18 @@ public class UserController {
         return ResponsUtil.success(result);
     }
 
+
+    @GetMapping("/recommend")
+    public BaseRespons<List<User>> recommendUsers(HttpServletRequest req){
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+        List<User> userList = userService.list(wrapper);
+        //用户脱敏
+        List<User> result = userList.stream()
+                .map(user -> userService.getSafeUser(user))
+                .collect(Collectors.toList());
+        return ResponsUtil.success(result);
+    }
+
     @GetMapping("/searchUserByTags")
     public BaseRespons<List<User>> searchUserByTags(@RequestParam(required = false) List<String> tagsName){
          if(tagsName == null) {
