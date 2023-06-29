@@ -1,3 +1,4 @@
+--标签表
 create table if not exists lcbackstage.tag
 (
 	id bigint auto_increment comment '主键递增'
@@ -19,7 +20,7 @@ create index index_userId
 	on lcbackstage.tag (userId);
 
 
-
+--用户表
 create table if not exists lcbackstage.user
 (
 	id bigint auto_increment comment '主键递增'
@@ -43,3 +44,33 @@ create table if not exists lcbackstage.user
 )
 comment '用户表' charset=utf8;
 
+--队伍表
+create table if not exists lcbackstage.team
+(
+	teamId bigint not null comment '队伍id '
+		primary key,
+	userId bigint null comment '队伍主人的id',
+	description varchar(255) not null comment '队伍描述',
+	teamName varchar(255) not null comment '队伍名称',
+	maxNum int default 1 not null comment '队伍最大人数',
+	expireTime datetime null comment ' 队伍过期时间',
+	teamStatus int default 0 null comment '队伍状态   0 公开 1私人 2加密',
+	createTime datetime default CURRENT_TIMESTAMP null comment ' 创建时间',
+	updateTime datetime default CURRENT_TIMESTAMP null on update CURRENT_TIMESTAMP comment '修改时间',
+	isDelete tinyint default 0 not null comment ' 是否删除'
+)
+comment '队伍表' charset=utf8;
+
+--队伍关系表
+create table if not exists lcbackstage.user_team
+(
+	tauId bigint not null comment '主键'
+		primary key,
+	teamId bigint null comment '队伍id',
+	userId bigint null comment '用户id',
+	jionTime datetime default CURRENT_TIMESTAMP null comment '加入时间',
+	createTime datetime default CURRENT_TIMESTAMP null comment '创建时间',
+	updateTime datetime default CURRENT_TIMESTAMP null comment '修改时间',
+	isDelete tinyint default 0 not null comment '是否删除 0 未删除 1 已删除'
+)
+comment '**队伍关系表**';

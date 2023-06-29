@@ -1,6 +1,7 @@
 package com.lc.usercenter.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.lc.usercenter.common.BaseRespons;
 import com.lc.usercenter.exception.BusinessException;
 import com.lc.usercenter.common.ErrorCode;
@@ -9,14 +10,19 @@ import com.lc.usercenter.model.domain.User;
 import com.lc.usercenter.model.requset.UserLoginRequest;
 import com.lc.usercenter.model.requset.UserRegisterRequest;
 import com.lc.usercenter.service.UserService;
-import org.apache.commons.lang3.ArrayUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 import static com.lc.usercenter.contact.UserContant.ADMIN_ROLE;
@@ -29,8 +35,12 @@ import static com.lc.usercenter.contact.UserContant.USER_LOGIN_STATE;
  */
 @RestController
 @RequestMapping("/user")
+@Slf4j
 //@CrossOrigin(origins = {"http://127.0.0.1:5173"})
 public class UserController {
+
+    @Resource
+    private RedisTemplate redisTemplate;
 
     @Resource
     private UserService userService;
@@ -119,14 +129,34 @@ public class UserController {
 
 
     @GetMapping("/recommend")
-    public BaseRespons<List<User>> recommendUsers(HttpServletRequest req){
+    public BaseRespons<Page<User>> recommendUsers(long pageNum,long pageSize,HttpServletRequest req){
+//        if(recom_users != null){
+//            List<User> userList1 = recom_users.stream().collect(Collectors.toList());
+//
+//        }
+        User loginUser = userService.getLoginUser(req);
+        String redisKey =  String.format("LLG:RECOMMEND:%s",loginUser.getId());
+        ValueOperations valueOperations = redisTemplate.opsForValue();
+        Page<User> userPage= (Page<User>)valueOperations.get(redisKey);
+        if(userPage != null){
+            return ResponsUtil.success(userPage);
+        }
         QueryWrapper<User> wrapper = new QueryWrapper<>();
-        List<User> userList = userService.list(wrapper);
-        //用户脱敏
-        List<User> result = userList.stream()
-                .map(user -> userService.getSafeUser(user))
-                .collect(Collectors.toList());
-        return ResponsUtil.success(result);
+        userPage = userService.page(new Page<>(pageNum,pageSize),wrapper);
+//        Map<Long, User> userMap = userList.getRecords().stream().collect(Collectors.toMap(
+//                User::getId,
+//                user -> {
+//                    return user;
+//                },
+//                (oldVlaue, newValue) -> newValue
+//        ));
+//        redisTemplate.opsForHash().putAll("RECOM_USERS",userMap);
+        try {
+            valueOperations.set(redisKey,userPage,10000, TimeUnit.SECONDS);
+        } catch (Exception e) {
+            log.error("red set err",e);
+        }
+        return ResponsUtil.success(userPage);
     }
 
     @GetMapping("/searchUserByTags")
